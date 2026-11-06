@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import TodoItem from './TodoItem'
 import './TodoList.css'
-function TodoList({ todos }) {
+function TodoList({ todos, onDelete }) {
   const [searchText, setSearchText] = useState('')
   const searchChange = (e) => {
     setSearchText(e.target.value)
@@ -19,7 +19,7 @@ function TodoList({ todos }) {
         {
           todos.map((todo) => {
             return (
-              <TodoItem key={todo.id} {...todo} />
+              <TodoItem key={todo.id} {...todo} onDelete={onDelete} />
             )
           })
 

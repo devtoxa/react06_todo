@@ -1,5 +1,5 @@
 import './TodoItem.css'
-function TodoItem({ id, isDone, content, createdDate }) {
+function TodoItem({ id, isDone, content, createdDate, onDelete }) {
     return (
         <div className="TodoItem">
             <div className="checkbox_col">
@@ -15,7 +15,7 @@ function TodoItem({ id, isDone, content, createdDate }) {
                 }
             </div>
             <div className="btn_col">
-                <button>삭제</button>
+                <button onClick={() => onDelete(id)}>삭제</button>
             </div>
         </div>
     )
