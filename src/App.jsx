@@ -1,5 +1,4 @@
 
-
 import './App.css'
 
 import Header from './component/Header'
@@ -47,14 +46,18 @@ function App() {
 
   }
   const onDelete = (id) => {
-    setTodos(todos.filter((todo)=>(todo.id !== id)))
+    setTodos(todos.filter((todo) => (todo.id !== id)))
   }
-
+  const onCheck = (id) => {
+    setTodos(todos.map((todo) => (
+      todo.id === id ? { ...todo, isDone: !todo.isDone } : todo
+    )))
+  }
   return (
     <div className='App'>
       <Header />
       <TodoEdit onCreate={onCreate} />
-      <TodoList todos={todos} onDelete={onDelete} />
+      <TodoList todos={todos} onDelete={onDelete} onCheck={onCheck} />
     </div>
   )
 }
