@@ -14,6 +14,9 @@ function TodoItem({ id, isDone, content, createdDate }) {
                     new Date(createdDate).toLocaleDateString()
                 }
             </div>
+            <div className="btn_col">
+                <button>삭제</button>
+            </div>
         </div>
     )
 }
