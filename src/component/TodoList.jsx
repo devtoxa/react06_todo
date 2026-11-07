@@ -24,7 +24,6 @@ function TodoList({ todos, onDelete, onCheck }) {
               <TodoItem key={todo.id} {...todo} onDelete={onDelete} onCheck={onCheck} />
             )
           })
-
         }
       </div>
 
